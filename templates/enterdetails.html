@@ -1,0 +1,31 @@
+<html>
+<head>
+    <link rel = "stylesheet" type = 'text/css' href = "{{ url_for('static', filename = 'styles/style.css') }}" >
+</head>
+<body>
+<div class = "center">
+<div class = "main-block">
+<h1 style = "color: black"> hello {{user}} </h1>
+{% if filename %}
+<div>
+    <video src = '{{ url_for('static', filename='/videos/' + filename) }}' ></video>
+</div>
+{% endif %}
+<!--    enctype="multipart/form-data"-->
+<form action = "/uploaded/" method = "POST" enctype="multipart/form-data" >
+    <label for = "video"> </label>
+    <input type = "file" id = "video" name = "video" autocomplete="off" accept=" video/*" required> </input>
+    <br>
+    <div class = "button">
+    <div class = "btn-block">
+    <button type = "submit" value = "submit"> SUBMIT </button>
+<!--        <button type = "Submit" value = "submit"> Back </button>-->
+    </div>
+        </div>
+</form>
+            </div>
+        </div>
+</div>
+</div>
+</body>
+</html>
